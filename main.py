@@ -317,7 +317,7 @@ def proximo(update, context, option=None):
         return
 
     mealKey = "cardapio#" + day + mealTime[2]
-    if mealKey in memory:
+    if mealKey in memory and option != "chuchu":
         s = memory[mealKey]
 
         update.message.reply_text(s, parse_mode="Markdown")
@@ -353,8 +353,9 @@ def proximo(update, context, option=None):
                      "Morango com gosto de chuchu do mercadão de São Paulo",
                      "Miolo de pão ao chuchu", "Suco de Limão que parece Tamarindo e tem gosto de Chuchu",
                      calories)
-
-    memory[mealKey] = s
+    else:
+        memory[mealKey] = s
+    
     update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
