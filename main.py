@@ -362,9 +362,6 @@ def almoco(update, context): proximo(update, context, "almoco")
 def jantar(update, context): proximo(update, context, "jantar")
 def chuchu(update, context): proximo(update, context, "chuchu")
 
-
-
-
 def _sendSimpleText(update, context, text):
     logMessageReceived(update, context, logger)
 
